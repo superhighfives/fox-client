@@ -34,7 +34,7 @@ angular.module('foxApp')
       audio = element[0]
 
       element.bind 'loadedmetadata', ->
-        audio.currentTime = 170
+        audio.currentTime = 30
         scope.duration = Math.round audio.duration
         
       element.bind 'timeupdate', ->

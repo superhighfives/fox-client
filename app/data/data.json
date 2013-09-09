@@ -78,13 +78,13 @@
     {
       "time": 13,
       "keyword": "hello",
-      "line": "Like 'hello, goodbye'",
+      "line": "Like hello, goodbye",
       "image": "../images/placeholders/13.gif"
     },
     {
       "time": 14,
       "keyword": "sky",
-      "line": "And 'see that blue sky'",
+      "line": "And see that blue sky",
       "image": "../images/placeholders/14.gif"
     },
     {
@@ -195,7 +195,7 @@
     {
       "time": 34,
       "keyword": "gravity",
-      "line": "Oh gravity, oh haste",
+      "line": "Oh gravity oh haste",
       "image": "../images/placeholders/34.gif"
     },
     {
@@ -215,11 +215,6 @@
       "time": 37,
       "keyword": "fox",
       "image": "../images/placeholders/37.gif"
-    },
-    {
-      "time": 38,
-      "keyword": "fox",
-      "image": "../images/placeholders/38.gif"
     },
     {
       "time": 39,

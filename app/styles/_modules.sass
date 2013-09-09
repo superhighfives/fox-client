@@ -60,6 +60,7 @@
   width: 100%
   height: 100%
   .lyric
+    transform: translate3d(0,0,0)
     opacity: 0
     position: relative
     width: 100%
@@ -83,8 +84,9 @@
       left: 0
       bottom: 50%
       width: 100%
-      text-align: center
+      text-align: left
       @extend %type-upcase
+      padding: 0 20px
     .line
       opacity: 0
       @extend %type-36pt
@@ -110,15 +112,17 @@
     &.visible
       display: block
       height: 100%
-      animation: fade-in $duration 0s forwards, fade-back 1.7s $duration forwards, fade-out $duration $duration * 2 forwards
+      animation: fade-in $duration 0s forwards, fade-back $duration / 2 $duration forwards, fade-lyric $duration $duration * 2 forwards
       .wrapper
         animation: reposition-text $duration $duration forwards
       .image
         animation: hide-image $duration $duration forwards
       .line
-        animation: fade-in 0.5s 0s forwards, fade-text $duration $duration forwards
+        animation: fade-in 0.5s 0s forwards, fade-text $duration / 2 $duration forwards
       .keyword
         animation: underline-text 1.7s $duration forwards, fade-text $duration $duration forwards
+      &.no-text
+        animation: fade-in $duration 0s forwards, fade-out $duration $duration / 2 forwards
       &.ended
         transition: padding 0.3s, opacity 1s, height 1s
         animation: none
@@ -139,6 +143,7 @@
           opacity: 1
           display: block
           visibility: visible
+          @extend %type-18pt
         .keyword
           animation: none
         .source
