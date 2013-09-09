@@ -2,12 +2,11 @@
   padding-top: $vertical-pacing
   .title
     padding-bottom: $vertical-pacing / 2
-    h2
-      @extend .display
-      font-size: 1.125em
-    h3
-      @extend .display
-      font-size: 1.063em
+    .title-primary
+      @extend %type-18pt
+      @extend %line-height-24pt
+    .title-secondary
+      @extend %type-14pt
 
 .footer
   box-sizing: border-box
@@ -19,37 +18,37 @@
 
   a
     transition: color 0.3s
-    @extend .display
     text-decoration: none
     color: $footer-text-color
     &:hover
       color: $footer-hover-color
 
-  h1
-    font-size: 1.125em
+  .logo
+    @extend %type-18pt
     margin: 0
     float: left 
     .fox
-      @extend .display-italic
+      font-style: italic
 
   .get-the-song
     float: right
+    @extend %type-upcase
     span.icon,
     span.social-icon
       transition: border-right-color 0.3s
       padding-right: 10px
       margin-right: 5px
       border-right: 1px solid #666
-      font-size: 0.75em
+      @extend %type-12pt
     &:hover
       span.icon,
       span.social-icon
         border-right-color: #fff
 
-.progress
+.progress-bar
   position: absolute
   bottom: 0
   left: 0
-  width: 50%
+  width: 0
   height: 5px
   background: $progress-background-color

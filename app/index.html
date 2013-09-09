@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
@@ -28,8 +29,8 @@
         <div class="span2">
           <div class="introduction">
             <div class="title">
-              <h2><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
-              <h3>But the video is made by you</h3>
+              <h2 class="title-primary"><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
+              <h3 class="title-secondary">But the video is made with gifs</h3>
             </div>
             <a class="button" ng-click="start()">
               <span class="icon">&#x25B6;</span>
@@ -49,11 +50,11 @@
       <source src="media/fox.ogg" />
     </audio>
 
-    <div class="progress" ng-style="{'width': progress + 'px'}"></div>
+    <div class="progress-bar" ng-style="{'width': progress + 'px'}"></div>
   </div>
 
   <div class="footer">
-    <h1>
+    <h1 class="logo">
       <a href="http://wearebrightly.com" target="blank">
         <span class="brightly">Brightly</span>
         <span class="fox">Fox</span>
@@ -69,6 +70,7 @@
   <!-- bower:js -->
   <script src="bower_components/jquery/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
