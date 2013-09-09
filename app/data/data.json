@@ -24,6 +24,7 @@
       "line": "In a pitch black dream",
       "image": "../images/placeholders/4.gif"
     },
+
     {
       "time": 5,
       "keyword": "she",
@@ -48,6 +49,7 @@
       "line": "And old movies",
       "image": "../images/placeholders/8.gif"
     },
+
     {
       "time": 9,
       "keyword": "along",
@@ -59,6 +61,191 @@
       "keyword": "hummed",
       "line": "Though we hummed different songs",
       "image": "../images/placeholders/10.gif"
+    },
+    {
+      "time": 11,
+      "keyword": "arm",
+      "line": "She wrote on my arm",
+      "image": "../images/placeholders/11.gif"
+    },
+    {
+      "time": 12,
+      "keyword": "Little",
+      "line": "Little messages",
+      "image": "../images/placeholders/12.gif"
+    },
+
+    {
+      "time": 13,
+      "keyword": "hello",
+      "line": "Like 'hello, goodbye'",
+      "image": "../images/placeholders/13.gif"
+    },
+    {
+      "time": 14,
+      "keyword": "sky",
+      "line": "And 'see that blue sky'",
+      "image": "../images/placeholders/14.gif"
+    },
+    {
+      "time": 15,
+      "keyword": "amazed",
+      "line": "And I was amazed",
+      "image": "../images/placeholders/15.gif"
+    },
+    {
+      "time": 16,
+      "keyword": "dexterity",
+      "line": "At her dexterity",
+      "image": "../images/placeholders/16.gif"
+    },
+
+    {
+      "time": 17,
+      "keyword": "fox",
+      "image": "../images/placeholders/17.gif"
+    },
+    {
+      "time": 19,
+      "keyword": "fox",
+      "image": "../images/placeholders/19.gif"
+    },
+
+    {
+      "time": 21,
+      "keyword": "rude",
+      "line": "And she could be rude",
+      "image": "../images/placeholders/21.gif"
+    },
+    {
+      "time": 22,
+      "keyword": "silly",
+      "line": "And silly and crude",
+      "image": "../images/placeholders/22.gif"
+    },
+    {
+      "time": 23,
+      "keyword": "sticks",
+      "line": "She put sticks in the spokes",
+      "image": "../images/placeholders/23.gif"
+    },
+    {
+      "time": 24,
+      "keyword": "bicycle",
+      "line": "Of my bicycle",
+      "image": "../images/placeholders/24.gif"
+    },
+
+    {
+      "time": 25,
+      "keyword": "ground",
+      "line": "And when I hit the ground",
+      "image": "../images/placeholders/25.gif"
+    },
+    {
+      "time": 26,
+      "keyword": "sound",
+      "line": "With a deafening sound",
+      "image": "../images/placeholders/26.gif"
+    },
+    {
+      "time": 27,
+      "keyword": "rolled",
+      "line": "She rolled around",
+      "image": "../images/placeholders/27.gif"
+    },
+    {
+      "time": 28,
+      "keyword": "Laughing",
+      "line": "Laughing uncontrollably",
+      "image": "../images/placeholders/28.gif"
+    },
+
+    {
+      "time": 29,
+      "keyword": "night",
+      "line": "And when night would fall",
+      "image": "../images/placeholders/29.gif"
+    },
+    {
+      "time": 30,
+      "keyword": "talk",
+      "line": "We'd have cookouts and talk",
+      "image": "../images/placeholders/30.gif"
+    },
+    {
+      "time": 31,
+      "keyword": "everyone",
+      "line": "About if everyone hears",
+      "image": "../images/placeholders/31.gif"
+    },
+    {
+      "time": 32,
+      "keyword": "see",
+      "line": "And can see the sounds",
+      "image": "../images/placeholders/32.gif"
+    },
+
+    {
+      "time": 33,
+      "keyword": "space",
+      "line": "Of time and of space",
+      "image": "../images/placeholders/33.gif"
+    },
+    {
+      "time": 34,
+      "keyword": "gravity",
+      "line": "Oh gravity, oh haste",
+      "image": "../images/placeholders/34.gif"
+    },
+    {
+      "time": 35,
+      "keyword": "world",
+      "line": "And the world spinning round",
+      "image": "../images/placeholders/35.gif"
+    },
+    {
+      "time": 36,
+      "keyword": "spins",
+      "line": "The world spins round",
+      "image": "../images/placeholders/36.gif"
+    },
+
+    {
+      "time": 37,
+      "keyword": "fox",
+      "image": "../images/placeholders/37.gif"
+    },
+    {
+      "time": 38,
+      "keyword": "fox",
+      "image": "../images/placeholders/38.gif"
+    },
+    {
+      "time": 39,
+      "keyword": "fox",
+      "image": "../images/placeholders/39.gif"
+    },
+
+    {
+      "time": 41,
+      "keyword": "fox",
+      "image": "../images/placeholders/41.gif"
+    },
+    {
+      "time": 43,
+      "keyword": "fox",
+      "image": "../images/placeholders/43.gif"
+    },
+    {
+      "time": 45,
+      "keyword": "fox",
+      "image": "../images/placeholders/45.gif"
+    },
+    {
+      "time": 47,
+      "keyword": "fox",
+      "image": "../images/placeholders/47.gif"
     }
   ]
 }

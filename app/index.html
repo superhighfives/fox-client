@@ -32,7 +32,7 @@
            ng-class="lyricClass()">
         <div class="image" ng-style="{'background-image': 'url(' + lyric.image + ')'}"></div>
         <div class="wrapper">
-          <div class="line">
+          <div class="line" ng-show="lyric.line">
             <span class="before">{{ lyric.processed[1] }}</span>
             <span class="keyword">{{ lyric.keyword }}</span>
             <span class="after">{{ lyric.processed[3] }}</span>

@@ -15,7 +15,8 @@ angular.module('foxApp')
         $scope.lyrics = data.lyrics
         for lyric in $scope.lyrics
           setBarTime(lyric)
-          setLyricSplit(lyric)
+          if(lyric.line)
+            setLyricSplit(lyric)
         console.log $scope.lyrics
       .error (data, status, headers, config) ->
         $scope.status = "Hmm, something went wrong. Reload, friend! Reload!"
@@ -36,6 +37,7 @@ angular.module('foxApp')
         console.log audio.currentTime
 
       element.bind 'loadedmetadata', ->
+        audio.currentTime = 0
         scope.duration = Math.round audio.duration
         
       element.bind 'timeupdate', ->
@@ -62,9 +64,9 @@ angular.module('foxApp')
               window.requestAnimationFrame(watchForChanges)
             else
               setTimeout ->
-                scope.$parent.ended = true
-                scope.$parent.$apply()
-              , 12000
+                scope.ended = true
+                scope.$apply()
+              , 6800
 
         window.requestAnimationFrame(watchForChanges)
 
@@ -79,4 +81,4 @@ angular.module('foxApp')
 
   .controller 'LyricCtrl', ($scope) ->
       $scope.lyricClass = ->
-        {visible: $scope.lyric.visible, 'no-image': !$scope.lyric.image}
+        {visible: $scope.lyric.visible, 'no-image': !$scope.lyric.image, 'no-text': !$scope.lyric.line, ended: $scope.ended}
