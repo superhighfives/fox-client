@@ -1,0 +1,16 @@
+{
+  "lyrics": [
+    {
+      "time": 1,
+      "keyword": "fox",
+      "line": "I met a fox",
+      "image": "http://media2.giphy.com/media/ZA2MnyEyTJe48/original.gif"
+    },
+    {
+      "time": 2,
+      "keyword": "road",
+      "line": "On a road that I crossed",
+      "image": "http://media1.giphy.com/media/D6WJXVjrKLRg4/original.gif"
+    }
+  ]
+}

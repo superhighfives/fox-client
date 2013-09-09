@@ -1,0 +1,55 @@
+.introduction
+  padding-top: $vertical-pacing
+  .title
+    padding-bottom: $vertical-pacing / 2
+    h2
+      @extend .display
+      font-size: 1.125em
+    h3
+      @extend .display
+      font-size: 1.063em
+
+.footer
+  box-sizing: border-box
+  position: absolute
+  bottom: 20px
+  left: 0
+  width: 100%
+  padding: 0 20px
+
+  a
+    transition: color 0.3s
+    @extend .display
+    text-decoration: none
+    color: $footer-text-color
+    &:hover
+      color: $footer-hover-color
+
+  h1
+    font-size: 1.125em
+    margin: 0
+    float: left 
+    .fox
+      @extend .display-italic
+
+  .get-the-song
+    float: right
+    span.icon,
+    span.social-icon
+      transition: border-right-color 0.3s
+      padding-right: 10px
+      margin-right: 5px
+      border-right: 1px solid #666
+      font-size: 0.75em
+    &:hover
+      span.icon,
+      span.social-icon
+        border-right-color: #fff
+
+.progress
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 50%
+  height: 5px
+  background: $progress-background-color

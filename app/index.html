@@ -1,0 +1,92 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>src</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="app" ng-app="foxApp" ng-controller="MainCtrl">
+    <div class="grid">
+      <div class="row">
+        <div class="span2">
+          <div class="introduction">
+            <div class="title">
+              <h2><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
+              <h3>But the video is made by you</h3>
+            </div>
+            <a class="button" href="#">
+              <span class="icon">&#x25B6;</span>
+              Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <video ng-repeat="line in lyrics" preload vine-videos>
+      <source ng-src="{{ line.video }}"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+    </video>
+
+    <audio preload autobuffer fox-audio>
+      <source src="media/fox.mp3" />
+      <source src="media/fox.ogg" />
+    </audio>
+
+    <div class="progress"></div>
+
+  </div>
+
+  <div class="footer">
+    <h1>
+      <a href="http://wearebrightly.com" target="blank">
+        <span class="brightly">Brightly</span>
+        <span class="fox">Fox</span>
+      </a>
+    </h1>
+    <a class="get-the-song" href="http://music.wearebrightly.com" target="blank">
+      <span class="icon">music</span>
+      Get the song
+    </a>
+  </div>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>
+
+
+  <!-- build:js(.tmp) scripts/main.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
