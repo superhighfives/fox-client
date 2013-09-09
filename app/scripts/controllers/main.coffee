@@ -22,11 +22,23 @@ angular.module('foxApp')
 
     getLyrics()
 
+    $scope.start = ->
+      $scope.playing = true
+
   .directive 'foxAudio', ->
     (scope, element, attrs) ->
       audio = element[0]
-      audio.play()
+
+      element.bind 'loadedmetadata', ->
+        scope.duration = Math.round audio.duration
+        
       element.bind 'timeupdate', ->
-        console.log audio.currentTime
+        scope.currentTime = Math.round audio.currentTime
+        updatedProgress = Math.round (scope.currentTime / scope.duration) * 100
+        unless updatedProgress is scope.progress
+          scope.progress = Math.round (scope.currentTime / scope.duration) * 100 unless scope.progress is updatedProgress
+          scope.$apply()
 
-
+      scope.$watch 'playing', ->
+        if scope.playing
+          audio.play()

@@ -23,7 +23,7 @@
   <![endif]-->
 
   <div class="app" ng-app="foxApp" ng-controller="MainCtrl">
-    <div class="grid">
+    <div class="grid" ng-show="!playing">
       <div class="row">
         <div class="span2">
           <div class="introduction">
@@ -31,7 +31,7 @@
               <h2><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
               <h3>But the video is made by you</h3>
             </div>
-            <a class="button" href="#">
+            <a class="button" ng-click="start()">
               <span class="icon">&#x25B6;</span>
               Play
             </a>
@@ -40,17 +40,16 @@
       </div>
     </div>
 
-    <video ng-repeat="line in lyrics" preload vine-videos>
+    <!-- <video ng-repeat="line in lyrics" preload vine-videos>
       <source ng-src="{{ line.video }}"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
-    </video>
+    </video> -->
 
     <audio preload autobuffer fox-audio>
       <source src="media/fox.mp3" />
       <source src="media/fox.ogg" />
     </audio>
 
-    <div class="progress"></div>
-
+    <div class="progress" ng-style="{'width': progress + 'px'}"></div>
   </div>
 
   <div class="footer">
