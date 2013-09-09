@@ -130,6 +130,9 @@
         display: block
         visibility: visible
         height: 100px
+        .wrapper
+          animation: none
+          top: 20px
         .image
           animation: none
           transition: opacity 0.3s
@@ -167,6 +170,8 @@
     &.no-text
       .wrapper
         bottom: 20px
+      .line
+        display: none
 
 audio
   position: absolute
