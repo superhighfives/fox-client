@@ -47,16 +47,15 @@ angular.module('foxApp')
 
       element.bind 'play', ->
         nextLyricId = 0
-        scope.visibleLyrics = []
 
         watchForChanges = ->
           if scope.lyrics?
-            currentTime = scope.currentTime
+            currentTime = audio.currentTime
             nextLyric = scope.lyrics[nextLyricId]
             if(currentTime > nextLyric.time)
+              console.log currentTime
               scope.currentLyric = nextLyric
               scope.currentLyric.visible = true
-              console.log scope.currentLyric
               scope.$apply()
               nextLyricId++
             if scope.lyrics.length > nextLyricId
@@ -81,15 +80,3 @@ angular.module('foxApp')
   .controller 'LyricCtrl', ($scope) ->
       $scope.lyricClass = ->
         {visible: $scope.lyric.visible, 'no-image': !$scope.lyric.image}
-
-  .directive 'lyric', ->
-    (scope, element, attrs) ->
-      scope.$watch 'lyric.visible', (isVisible) ->
-        if isVisible
-          console.log isVisible
-          # lyricHeight = element.find('.lyric').height()
-          # element.height(lyricHeight)
-          # setTimeout ->
-          #   element.removeClass('transition-height')
-          #   element.css('height', 'auto')
-          # , 10000

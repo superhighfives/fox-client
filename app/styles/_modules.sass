@@ -60,18 +60,25 @@
   width: 100%
   height: 100%
   .lyric
-    display: none
+    opacity: 0
+    position: relative
     width: 100%
     height: 100%
     overflow: hidden
-    background-size: cover
-    background-position: center center
-    background-repeat: none
-    position: relative
+    .image
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-size: cover
+      background-position: center center
+      background-repeat: none
+      opacity: 0.5
     .wrapper
       position: absolute
       left: 0
-      bottom: 120px
+      bottom: 50%
       width: 100%
       text-align: center
       @extend %type-upcase
@@ -96,15 +103,15 @@
           background: $source-background-color
     &.visible
       display: block
-      animation: fade-back $outro-delay $outro-delay forwards
-      .wrapper
-        animation: reposition-text $outro-delay $outro-delay forwards
+      animation: fade-in $duration 0s forwards, fade-back $duration $duration forwards, fade-out $duration $duration * 2 forwards
+      .image
+        animation: hide-image $duration $duration forwards
       .line
-        animation: fade-in $timing $timing-delay forwards
+        animation: fade-in 0.5s 0s forwards
       .keyword
-        animation: highlight-keyword $timing $timing-delay + $intro-delay forwards
+        animation: highlight-keyword 0.5s $duration forwards
       .source
-        animation: fade-in $timing $timing-delay + $intro-delay forwards
+        animation: fade-in 0.5s $duration forwards
 
 
 audio

@@ -4,13 +4,61 @@
       "time": 1,
       "keyword": "fox",
       "line": "I met a fox",
-      "image": "http://media2.giphy.com/media/ZA2MnyEyTJe48/original.gif"
+      "image": "../images/placeholders/1.gif"
     },
     {
       "time": 2,
       "keyword": "road",
       "line": "On a road that I crossed",
-      "image": "http://media1.giphy.com/media/D6WJXVjrKLRg4/original.gif"
+      "image": "../images/placeholders/2.gif"
+    },
+    {
+      "time": 3,
+      "keyword": "seen",
+      "line": "In a park that I'd seen",
+      "image": "../images/placeholders/3.gif"
+    },
+    {
+      "time": 4,
+      "keyword": "dream",
+      "line": "In a pitch black dream",
+      "image": "../images/placeholders/4.gif"
+    },
+    {
+      "time": 5,
+      "keyword": "she",
+      "line": "She asked my name",
+      "image": "../images/placeholders/5.gif"
+    },
+    {
+      "time": 6,
+      "keyword": "same",
+      "line": "Cause we seemed the same",
+      "image": "../images/placeholders/6.gif"
+    },
+    {
+      "time": 7,
+      "keyword": "sea",
+      "line": "We both liked the sea",
+      "image": "../images/placeholders/7.gif"
+    },
+    {
+      "time": 8,
+      "keyword": "old",
+      "line": "And old movies",
+      "image": "../images/placeholders/8.gif"
+    },
+    {
+      "time": 9,
+      "keyword": "along",
+      "line": "So we got along",
+      "image": "../images/placeholders/9.gif"
+    },
+    {
+      "time": 10,
+      "keyword": "hummed",
+      "line": "Though we hummed different songs",
+      "image": "../images/placeholders/10.gif"
     }
   ]
 }
