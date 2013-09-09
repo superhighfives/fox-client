@@ -24,33 +24,53 @@
   <![endif]-->
 
   <div class="app" ng-app="foxApp" ng-controller="MainCtrl">
-    <div class="grid" ng-show="!playing">
-      <div class="row">
-        <div class="span2">
-          <div class="introduction">
-            <div class="title">
-              <h2 class="title-primary"><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
-              <h3 class="title-secondary">But the video is made with gifs</h3>
-            </div>
-            <a class="button" ng-click="start()">
-              <span class="icon">&#x25B6;</span>
-              Play
-            </a>
+
+    <div class="lyrics">
+      <div class="lyric"
+           ng-style="{'background-image': 'url(' + lyric.image + ')'}"
+           ng-repeat="lyric in lyrics"
+           ng-controller="LyricCtrl"
+           ng-class="lyricClass()"
+           lyric>
+        <div class="wrapper">
+          <div class="line">
+            <span class="before">{{ lyric.processed[1] }}</span>
+            <span class="keyword">{{ lyric.keyword }}</span>
+            <span class="after">{{ lyric.processed[3] }}</span>
+          </div>
+          <div class="source">
+            <span class="source-title"><span class="icon">&#x1F517;</span> Source</span>
+            <a class="source-link" href="http://microtripit.tumblr.com">microtripit.tumblr.com</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- <video ng-repeat="line in lyrics" preload vine-videos>
-      <source ng-src="{{ line.video }}"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
-    </video> -->
+    <div class="chrome">
+      <div class="grid" ng-show="!playing">
+        <div class="row">
+          <div class="span2">
+            <div class="introduction">
+              <div class="title">
+                <h2 class="title-primary"><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
+                <h3 class="title-secondary">But the video is made with gifs</h3>
+              </div>
+              <a class="button ng-cloak" ng-class="{loaded: ready()}" ng-click="start()">
+                <span class="icon" ng-show="ready()">&#x25B6;</span>
+                {{ status }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <audio preload autobuffer fox-audio>
+    <audio preload autobuffer controls fox-audio>
       <source src="media/fox.mp3" />
       <source src="media/fox.ogg" />
     </audio>
 
-    <div class="progress-bar" ng-style="{'width': progress + 'px'}"></div>
+    <div class="progress-bar" ng-style="{'width': progress + '%'}"></div>
   </div>
 
   <div class="footer">
