@@ -20,18 +20,21 @@ angular.module('foxApp')
 
     getLyrics = ->
       $scope.status = "Fetching gifs..."
-      $http.get(gif_url).success (data) ->
-        $scope.lyrics = data
-        for lyric in $scope.lyrics
-          setBarTime(lyric)
-          if(lyric.line)
-            setLyricSplit(lyric)
+      $http.jsonp(gif_url + '').success (data) ->
+        setTimeout (->
+          $scope.lyrics = data
+          for lyric in $scope.lyrics
+            setBarTime(lyric)
+            if(lyric.line)
+              setLyricSplit(lyric)
+          $scope.$apply()
+        ), 3000
       .error (data, status, headers, config) ->
         if gif_fetch_attempts >= gif_fetch_attempt_limit
           $scope.status = "Hmm, something went wrong. Reload, or try again soon!"
         else
           gif_fetch_attempts += 1
-          setTimeout (-> getLyrics()), 1000
+          setTimeout (-> getLyrics()), 300
 
     getLyrics()
 
