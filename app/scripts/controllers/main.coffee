@@ -39,7 +39,7 @@ angular.module('foxApp')
     getLyrics()
 
     $scope.start = ->
-      $scope.playing = true
+      $scope.playing = true if $scope.lyricsLoaded
 
     $scope.ready = ->
       $scope.lyricsLoaded

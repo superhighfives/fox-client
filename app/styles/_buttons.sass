@@ -2,19 +2,21 @@
   display: block
   padding: $button-padding
   color: $button-text-color
-  background: $button-background-color
+  background: $button-loading-background-color
   text-transform: uppercase
   text-align: center
   text-decoration: none
-  box-shadow: 0 0 10px rgba($button-glow-color, 0.5)
   transition: box-shadow 0.3s, background 0.3s
-  animation: glow-pulse 2.5s infinite
   .icon,
   .social-icon
     font-size: 0.75em
     margin-right: 5px
-  &:hover
-    background: lighten($button-glow-color, 10%)
+  &.loaded
+    animation: glow-pulse 2.5s infinite
+    box-shadow: 0 0 10px rgba($button-glow-color, 0.5)
+    background: $button-background-color
+    &:hover
+      background: lighten($button-glow-color, 10%)
 
 @keyframes glow-pulse
   0%, 100%
