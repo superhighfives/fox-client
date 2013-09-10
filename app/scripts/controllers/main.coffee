@@ -36,7 +36,7 @@ angular.module('foxApp')
           $scope.status = "Hmm, something went wrong. Reload, or try again soon!"
         else
           gif_fetch_attempts += 1
-          setTimeout (-> getLyrics()), 300
+          setTimeout (-> getLyrics()), 500
 
     getLyrics()
 
