@@ -21,7 +21,7 @@
 
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="styles/f12f16e7.main.css">
+  <link rel="stylesheet" href="styles/b18e471f.main.css">
   <script src="scripts/vendor/f7f27360.modernizr.js"></script>
 </head>
 <body ng-app="foxApp" ng-controller="MainCtrl" ng-class="{ended: ended}">
@@ -33,7 +33,7 @@
 
     <div class="lyrics">
       <div class="lyric" ng-repeat="lyric in lyrics" ng-controller="LyricCtrl" ng-class="lyricClass()">
-        <div class="image" ng-style="{'background-image': 'url(' + lyric.image.url + ')'}"></div>
+        <div class="image" ng-style="imageStyle()"></div>
         <div class="wrapper">
           <div class="line" ng-show="lyric.line">
             <span class="before">{{ lyric.processed[1] }}</span>
@@ -101,6 +101,6 @@
   </script>
 
 
-  <script src="scripts/f8fb7cbb.main.js"></script>
+  <script src="scripts/a2174dd0.main.js"></script>
 </body>
 </html>
