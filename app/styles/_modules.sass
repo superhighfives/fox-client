@@ -77,8 +77,6 @@
       background-repeat: none
       background-attachment: fixed
       opacity: 0.25
-    .keyword
-      color: $text-color-highlight
     .wrapper
       position: absolute
       left: 0
@@ -120,7 +118,7 @@
       .line
         animation: fade-in 0.5s 0s forwards, fade-text $duration / 2 $duration forwards
       .keyword
-        animation: underline-text 1.7s $duration forwards, fade-text $duration $duration forwards
+        animation: highlight-keyword $duration 1.7s forwards
       &.no-text
         animation: fade-in $duration 0s forwards, fade-out $duration $duration / 2 forwards
       &.ended
