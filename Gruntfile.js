@@ -201,6 +201,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        ngmin: {
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= yeoman.dist %>/scripts',
+              src: '*.js',
+              dest: '<%= yeoman.dist %>/scripts'
+            }]
+          }
+        },
         useminPrepare: {
             options: {
                 dest: '<%= yeoman.dist %>'
@@ -355,6 +365,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
+        'ngmin:dist',
         'uglify',
         'modernizr',
         'copy:dist',

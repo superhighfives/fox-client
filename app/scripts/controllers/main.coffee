@@ -3,11 +3,20 @@
 angular.module('foxApp')
   .controller 'MainCtrl', ($scope, $http, $document) ->
 
+
+    gif_url = if window.location.toString().match(/localhost/) and not window.location.toString().match(/\?live=1/)
+      "http://localhost:5000/data.json?callback=JSON_CALLBACK"
+    else
+      "http://fox-server.herokuapp.com/tweets.json?callback=JSON_CALLBACK"
+
     setBarTime = (lyric) -> lyric.time = (3.4 * lyric.time) - 3.4
     setLyricSplit = (lyric) ->
       if lyric.keyword
         pattern = new RegExp "^(.*)(#{lyric.keyword})(.*)$", "im"
         lyric.processed = lyric.line.match pattern
+
+    gif_fetch_attempt_limit = 3
+    gif_fetch_attempts = 1
 
     getLyrics = ->
       $scope.status = "Fetching data..."
@@ -19,7 +28,11 @@ angular.module('foxApp')
             setLyricSplit(lyric)
         console.log $scope.lyrics
       .error (data, status, headers, config) ->
-        $scope.status = "Hmm, something went wrong. Reload, friend! Reload!"
+        if gif_fetch_attempts >= gif_fetch_attempt_limit
+          $scope.status = "Hmm, something went wrong. Reload, or try again soon!"
+        else
+          gif_fetch_attempts += 1
+          setTimeout (-> getLyrics()), 1000
 
     getLyrics()
 
