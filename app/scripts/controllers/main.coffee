@@ -50,8 +50,8 @@ angular.module('foxApp')
     (scope, element, attrs) ->
       audio = element[0]
 
-      element.bind 'click', ->
-        console.log audio.currentTime / 3.429
+      # element.bind 'click', ->
+      #   console.log audio.currentTime / 3.429
 
       element.bind 'loadedmetadata', ->
         audio.currentTime = 30
