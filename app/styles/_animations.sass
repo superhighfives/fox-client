@@ -38,10 +38,6 @@
   100%
     color: $text-color-subtle
 
-@keyframes underline-text
-  100%
-    border-bottom: 5px solid #fff
-
 @keyframes reset-lyric
   0%
     opacity: 0
@@ -76,7 +72,16 @@
 
 @keyframes highlight-keyword
   100%
+    border-bottom-color: $text-color-highlight
     color: $text-color-highlight
+
+@keyframes fade-highlight
+  0%
+    border-bottom-color: $text-color-highlight
+    color: $text-color-highlight
+  100%
+    border-bottom-color: transparent
+    color: $text-color-subtle
 
 @keyframes reposition-text
   100%

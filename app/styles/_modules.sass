@@ -82,16 +82,18 @@
       left: 0
       bottom: 50%
       width: 100%
-      text-align: left
       @extend %type-upcase
       padding: 0 20px
     .line
       opacity: 0
       @extend %type-36pt
+      .keyword
+        border-bottom: 1px solid transparent
     .source
       opacity: 0
       display: none
       @extend %type-12pt
+      padding-top: 5px
       .source-title
         color: $source-title-text-color
         .icon
@@ -118,7 +120,8 @@
       .line
         animation: fade-in 0.5s 0s forwards, fade-text $duration / 2 $duration forwards
       .keyword
-        animation: highlight-keyword $duration 1.7s forwards
+        position: relative
+        animation: highlight-keyword $duration / 2 $duration / 2 forwards, fade-highlight $duration / 2 $duration forwards
       &.no-text
         animation: fade-in $duration 0s forwards, fade-out $duration $duration / 2 forwards
       &.ended
@@ -162,9 +165,10 @@
           .source .source-title,
           .source .source-link,
           .line .before,
-          .line .keyword,
           .line .after
             color: $color-white
+          .line .keyword
+            color: $text-color-highlight
     &.no-text
       .wrapper
         bottom: 20px
