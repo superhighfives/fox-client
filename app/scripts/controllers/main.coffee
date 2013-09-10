@@ -7,7 +7,7 @@ angular.module('foxApp')
     gif_url = if window.location.toString().match(/localhost/) and not window.location.toString().match(/\?live=1/)
       "http://localhost:5000/data.json?callback=JSON_CALLBACK"
     else
-      "http://fox-server.herokuapp.com/tweets.json?callback=JSON_CALLBACK"
+      "http://fox-server.herokuapp.com/data.json?callback=JSON_CALLBACK"
 
     setBarTime = (lyric) -> lyric.time = (3.4 * lyric.time) - 3.4
     setLyricSplit = (lyric) ->
@@ -20,7 +20,7 @@ angular.module('foxApp')
 
     getLyrics = ->
       $scope.status = "Fetching gifs..."
-      $http.get("http://localhost:5000/data.json").success (data) ->
+      $http.get(gif_url).success (data) ->
         $scope.lyrics = data
         for lyric in $scope.lyrics
           setBarTime(lyric)
