@@ -11,7 +11,7 @@ angular.module('foxApp')
     requestAnimationFrame = window.requestAnimationFrame or window.mozRequestAnimationFrame or window.webkitRequestAnimationFrame or window.msRequestAnimationFrame
     window.requestAnimationFrame = requestAnimationFrame
 
-    setBarTime = (lyric) -> lyric.time = (3.4 * lyric.time) - 3.4
+    setBarTime = (lyric) -> lyric.time = (3.429 * lyric.time) - 3.429
     setLyricSplit = (lyric) ->
       if lyric.keyword
         pattern = new RegExp "^(.*)(#{lyric.keyword})(.*)$", "im"
@@ -50,8 +50,11 @@ angular.module('foxApp')
     (scope, element, attrs) ->
       audio = element[0]
 
+      element.bind 'click', ->
+        console.log audio.currentTime / 3.429
+
       element.bind 'loadedmetadata', ->
-        # audio.currentTime = 160
+        audio.currentTime = 30
         scope.duration = Math.round audio.duration
         
       element.bind 'timeupdate', ->

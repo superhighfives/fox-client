@@ -91,9 +91,10 @@
       width: 100%
       @extend %type-upcase
       padding: 0 20px
+      text-align: center
     .line
       opacity: 0
-      @extend %type-36pt
+      @extend %type-18pt
       .keyword
         border-bottom: 1px solid transparent
     .source
@@ -120,7 +121,8 @@
     &.visible
       display: block
       height: 100%
-      animation: fade-in $duration 0s forwards, fade-lyric $duration $duration forwards
+      opacity: 1
+      animation: fade-lyric 0s $duration forwards
       .image
         animation: hide-image $duration $duration forwards
       .line
@@ -140,6 +142,7 @@
         .wrapper
           animation: none
           top: 20px
+          text-align: left
         .image
           animation: none
           transition: opacity 0.3s
