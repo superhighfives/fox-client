@@ -5,14 +5,14 @@ angular.module('foxApp')
 
     setBarTime = (lyric) -> lyric.time = (3.4 * lyric.time) - 3.4
     setLyricSplit = (lyric) ->
-      if lyric.image
+      if lyric.keyword
         pattern = new RegExp "^(.*)(#{lyric.keyword})(.*)$", "im"
         lyric.processed = lyric.line.match pattern
 
     getLyrics = ->
       $scope.status = "Fetching data..."
-      $http.get("/data/data.json").success (data) ->
-        $scope.lyrics = data.lyrics
+      $http.get("http://localhost:5000/data.json").success (data) ->
+        $scope.lyrics = data
         for lyric in $scope.lyrics
           setBarTime(lyric)
           if(lyric.line)
@@ -34,7 +34,7 @@ angular.module('foxApp')
       audio = element[0]
 
       element.bind 'loadedmetadata', ->
-        audio.currentTime = 60
+        # audio.currentTime = 60
         scope.duration = Math.round audio.duration
         
       element.bind 'timeupdate', ->

@@ -30,7 +30,7 @@
            ng-repeat="lyric in lyrics"
            ng-controller="LyricCtrl"
            ng-class="lyricClass()">
-        <div class="image" ng-style="{'background-image': 'url(' + lyric.image + ')'}"></div>
+        <div class="image" ng-style="{'background-image': 'url(' + lyric.image.url + ')'}"></div>
         <div class="wrapper">
           <div class="line" ng-show="lyric.line">
             <span class="before">{{ lyric.processed[1] }}</span>
@@ -39,7 +39,7 @@
           </div>
           <div class="source">
             <span class="source-title"><span class="icon">&#x1F517;</span> Source</span>
-            <a class="source-link" href="http://microtripit.tumblr.com">microtripit.tumblr.com</a>
+            <a class="source-link" ng-href="{{ lyric.image.source }}">{{ lyric.image.source }}</a>
           </div>
         </div>
       </div>
