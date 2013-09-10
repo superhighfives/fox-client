@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Fox - A Giphy-powered film clip by Brightly</title>
+  <meta name="description" content="The live Giphy-powered film clip for the single Fox, from electronic folk band Brightly.">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" type="image/png">
+
+    <meta property="og:title" content="Fox - A Giphy-powered film clip by Brightly">
+    <meta property="og:description" content="The live Giphy-powered film clip for the single Fox, from electronic folk band Brightly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://fox.wearebrightly.com/">
+    <meta property="og:image" content="http://fox.wearebrightly.com/apple-touch-icon.png">
+    <meta property="og:site_name" content="Preflight Nerves - A Twitter-powered film clip by Brightly">
+    <meta property="fb:admins" content="500678127">
+
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/f12f16e7.main.css">
+  <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+</head>
+<body ng-app="foxApp" ng-controller="MainCtrl" ng-class="{ended: ended}">
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="app">
+
+    <div class="lyrics">
+      <div class="lyric" ng-repeat="lyric in lyrics" ng-controller="LyricCtrl" ng-class="lyricClass()">
+        <div class="image" ng-style="{'background-image': 'url(' + lyric.image.url + ')'}"></div>
+        <div class="wrapper">
+          <div class="line" ng-show="lyric.line">
+            <span class="before">{{ lyric.processed[1] }}</span>
+            <span class="keyword">{{ lyric.keyword }}</span>
+            <span class="after">{{ lyric.processed[3] }}</span>
+          </div>
+          <div class="source" ng-show="lyric.image.source">
+            <span class="source-title"><span class="icon">&#x1F517;</span> Source</span>
+            <a class="source-link" ng-href="{{ lyric.image.source }}">{{ lyric.image.source }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chrome">
+      <div class="grid" ng-show="!playing">
+        <div class="row">
+          <div class="span2">
+            <div class="introduction">
+              <div class="title">
+                <h2 class="title-primary"><span class="emphasis">Fox</span> is a song by <span class="highlight">Brightly</span></h2>
+                <h3 class="title-secondary">But the video is made with gifs</h3>
+              </div>
+              <a class="button ng-cloak" ng-class="{loaded: ready()}" ng-click="start()">
+                <span class="icon" ng-show="ready()">&#x25B6;</span>
+                {{ status }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio preload="" autobuffer="" fox-audio="">
+      <source src="https://s3-ap-southeast-2.amazonaws.com/fox.wearebrightly.com/media/fox.mp3">
+      <source src="https://s3-ap-southeast-2.amazonaws.com/fox.wearebrightly.com/media/fox.ogg">
+    </audio>
+
+    <div class="progress-bar" ng-style="{'width': progress + '%'}"></div>
+  </div>
+
+  <div class="footer">
+    <h1 class="logo">
+      <a href="http://wearebrightly.com" target="blank">
+        <span class="brightly">Brightly</span>
+        <span class="fox">Fox</span>
+      </a>
+    </h1>
+    <a class="get-the-song" href="http://music.wearebrightly.com" target="blank">
+      <span class="icon">music</span>
+      Get the song
+    </a>
+  </div>
+
+  <script src="scripts/bdd9e4e5.vendor.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>
+
+
+  <script src="scripts/f8fb7cbb.main.js"></script>
+</body>
+</html>
