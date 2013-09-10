@@ -19,7 +19,7 @@ angular.module('foxApp')
     gif_fetch_attempts = 1
 
     getLyrics = ->
-      $scope.status = "Fetching data..."
+      $scope.status = "Fetching gifs..."
       $http.get("http://localhost:5000/data.json").success (data) ->
         $scope.lyrics = data
         for lyric in $scope.lyrics
