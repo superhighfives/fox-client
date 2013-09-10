@@ -40,7 +40,7 @@
            ng-repeat="lyric in lyrics"
            ng-controller="LyricCtrl"
            ng-class="lyricClass()">
-        <div class="image" ng-style="{'background-image': 'url(' + lyric.image.url + ')'}"></div>
+        <div class="image" ng-style="imageStyle()"></div>
         <div class="wrapper">
           <div class="line" ng-show="lyric.line">
             <span class="before">{{ lyric.processed[1] }}</span>

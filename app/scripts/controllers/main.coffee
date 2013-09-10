@@ -26,7 +26,6 @@ angular.module('foxApp')
           setBarTime(lyric)
           if(lyric.line)
             setLyricSplit(lyric)
-        console.log $scope.lyrics
       .error (data, status, headers, config) ->
         if gif_fetch_attempts >= gif_fetch_attempt_limit
           $scope.status = "Hmm, something went wrong. Reload, or try again soon!"
@@ -65,7 +64,6 @@ angular.module('foxApp')
             currentTime = audio.currentTime
             nextLyric = scope.lyrics[nextLyricId]
             if(currentTime > nextLyric.time)
-              console.log currentTime
               scope.currentLyric = nextLyric
               scope.currentLyric.visible = true
               scope.$apply()
@@ -92,3 +90,5 @@ angular.module('foxApp')
   .controller 'LyricCtrl', ($scope) ->
       $scope.lyricClass = ->
         {visible: $scope.lyric.visible, 'no-image': !$scope.lyric.image, 'no-text': !$scope.lyric.line, ended: $scope.ended}
+      $scope.imageStyle = ->
+        {'background-image': 'url(' + $scope.lyric.image.url + ')'} unless !$scope.lyric.image
