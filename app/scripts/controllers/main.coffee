@@ -3,11 +3,13 @@
 angular.module('foxApp')
   .controller 'MainCtrl', ($scope, $http, $document) ->
 
-
     gif_url = if window.location.toString().match(/localhost/) and not window.location.toString().match(/\?live=1/)
       "http://localhost:5000/data.json?callback=JSON_CALLBACK"
     else
       "http://fox-server.herokuapp.com/data.json?callback=JSON_CALLBACK"
+
+    requestAnimationFrame = window.requestAnimationFrame or window.mozRequestAnimationFrame or window.webkitRequestAnimationFrame or window.msRequestAnimationFrame
+    window.requestAnimationFrame = requestAnimationFrame
 
     setBarTime = (lyric) -> lyric.time = (3.4 * lyric.time) - 3.4
     setLyricSplit = (lyric) ->
